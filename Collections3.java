@@ -1,0 +1,49 @@
+import java.util.*;
+
+
+
+class Collections3
+{
+    public static void main(String Arr[])
+    {
+        LinkedList <Book>lobj= new LinkedList<Book>();
+        
+        lobj.add(new Book("Let us C ", 300));
+        lobj.add(new Book("Data structures", 580));
+        lobj.add(new Book("C++ programming ", 980));
+        lobj.add(new Book("Angular web development ", 790));
+
+        Iterator iobj = lobj.iterator();       //iterator() method returns the reference of Iterator class
+        
+        Book bref = null;
+
+        System.out.println("Element of linked list are : ");
+
+        while(iobj.hasNext())   //hasNext Iterator navachya class chi method ahe
+        {
+            bref = (Book) iobj.next();
+            bref.Display();
+        }
+
+        lobj.clear();
+    }
+}
+
+class Book
+{
+    public String Name;
+    public int Price;
+
+    public Book(String s, int i)
+    {
+        this.Name = s;
+        this.Price = i;
+    }
+
+    public void Display()
+    {
+        System.out.println("Book name: " +this.Name+ "Price : "+this.Price);
+    }
+
+}
+
